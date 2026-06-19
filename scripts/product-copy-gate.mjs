@@ -18,6 +18,7 @@ const targets = [
   'output/PolicyPay-Agent-Pitch.pptx.inspect.ndjson',
   'output/PolicyPay-Agent-Pitch-voiceover.txt',
   'output/PolicyPay-Agent-Pitch.en.srt',
+  'output/submission-readiness-latest.json',
   'submission',
 ];
 

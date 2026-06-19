@@ -82,17 +82,17 @@ for (const required of requiredFiles) {
 }
 
 const removedSurfaces = [
-  'apps/web/app/tests/page.tsx',
-  'apps/web/app/api/test-runs/route.ts',
-  'apps/web/components/TestConsole.tsx',
+  { id: 'publicQaPage', path: 'apps/web/app/tests/page.tsx' },
+  { id: 'publicQaApi', path: 'apps/web/app/api/test-runs/route.ts' },
+  { id: 'publicQaComponent', path: 'apps/web/components/TestConsole.tsx' },
 ];
 
 for (const removed of removedSurfaces) {
   addCheck(
-    `removed:${removed}`,
-    fileExists(removed) ? 'fail' : 'pass',
-    fileExists(removed) ? 'Public test surface still exists' : 'Public test surface is absent',
-    { file: removed },
+    `removed:${removed.id}`,
+    fileExists(removed.path) ? 'fail' : 'pass',
+    fileExists(removed.path) ? 'Review-only surface still exists' : 'Review-only surface is absent',
+    { surface: removed.id },
   );
 }
 
