@@ -381,3 +381,10 @@
 - 上下文：重新生成 `output/PolicyPay-Agent-Pitch-voiceover.mp3` 与 `output/PolicyPay-Agent-Pitch-slidecut.mp4`。
 - 可能原因：单次调用 `say` 读取完整文稿不稳定；分段输入后各段均可正常合成。
 - 解决状态：已解决
+
+## [2026-06-20 03:50:45 CST]
+- 问题描述：Git 仓库未初始化且未配置 `origin` 的提交阻塞已解决。
+- 发生位置：/Users/sxlx/Documents/Codex/policy-pay-agent
+- 上下文：已初始化本地 Git 仓库，创建公开 GitHub 仓库并推送 `main` 分支。
+- 可能原因：项目此前是普通目录，不是 Git checkout。
+- 解决状态：已解决
