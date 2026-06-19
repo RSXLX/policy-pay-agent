@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-19T19:54:50.310Z",
+  "generatedAt": "2026-06-19T20:03:44.205Z",
   "ready": true,
   "counts": {
-    "pass": 18,
+    "pass": 20,
     "warn": 0,
     "fail": 0
   },
@@ -76,6 +76,16 @@
       "status": "pass",
       "detail": "Required submission artifact exists",
       "file": "submission/sui-overflow-submission.md"
+    },
+    {
+      "name": "link:liveApp",
+      "status": "pass",
+      "detail": "Live app URL is present in submission copy"
+    },
+    {
+      "name": "link:assetRelease",
+      "status": "pass",
+      "detail": "Public release URL is present in submission copy"
     },
     {
       "name": "removed:publicQaPage",

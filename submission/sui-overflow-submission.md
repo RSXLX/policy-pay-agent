@@ -39,7 +39,7 @@ The product demonstrates an autonomous agent that observes state, plans an actio
 - Readiness report: `output/submission-readiness-latest.json`
 - GitHub repository: https://github.com/RSXLX/policy-pay-agent
 - Pitch video URL: https://github.com/RSXLX/policy-pay-agent/releases/tag/submission-v1
-- Live app URL: to be filled after deployment, or use local walkthrough during recording
+- Live app URL: https://policypay-web-deploy.vercel.app
 
 ## Suggested Submission Description
 
@@ -62,9 +62,9 @@ PolicyPay Agent is a Sui-native autonomous payment product for recurring treasur
 
 - [x] GitHub repository URL added above.
 - [x] Pitch video URL added above.
-- [ ] Live app URL added above if deployed.
-- [ ] `pnpm test` passes.
-- [ ] `pnpm typecheck` passes.
-- [ ] `pnpm build` passes.
-- [ ] `pnpm verify:product-copy` passes.
-- [ ] `pnpm verify:submission` passes after GitHub remote is configured.
+- [x] Live app URL added above.
+- [x] `pnpm test` passes.
+- [x] `pnpm typecheck` passes.
+- [x] `pnpm build` passes.
+- [x] `pnpm verify:product-copy` passes.
+- [x] `pnpm verify:submission` passes after GitHub remote is configured.

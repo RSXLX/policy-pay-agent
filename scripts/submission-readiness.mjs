@@ -81,6 +81,24 @@ for (const required of requiredFiles) {
   );
 }
 
+if (fileExists('submission/sui-overflow-submission.md')) {
+  const submissionText = readFileSync(path.join(root, 'submission/sui-overflow-submission.md'), 'utf8');
+  addCheck(
+    'link:liveApp',
+    submissionText.includes('https://policypay-web-deploy.vercel.app') ? 'pass' : 'fail',
+    submissionText.includes('https://policypay-web-deploy.vercel.app')
+      ? 'Live app URL is present in submission copy'
+      : 'Live app URL is missing from submission copy',
+  );
+  addCheck(
+    'link:assetRelease',
+    submissionText.includes('https://github.com/RSXLX/policy-pay-agent/releases/tag/submission-v1') ? 'pass' : 'fail',
+    submissionText.includes('https://github.com/RSXLX/policy-pay-agent/releases/tag/submission-v1')
+      ? 'Public release URL is present in submission copy'
+      : 'Public release URL is missing from submission copy',
+  );
+}
+
 const removedSurfaces = [
   { id: 'publicQaPage', path: 'apps/web/app/tests/page.tsx' },
   { id: 'publicQaApi', path: 'apps/web/app/api/test-runs/route.ts' },

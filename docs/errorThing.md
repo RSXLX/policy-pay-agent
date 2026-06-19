@@ -388,3 +388,23 @@
 - 上下文：已初始化本地 Git 仓库，创建公开 GitHub 仓库并推送 `main` 分支。
 - 可能原因：项目此前是普通目录，不是 Git checkout。
 - 解决状态：已解决
+## [2026-06-20 03:57:53 CST]
+- 问题描述：使用 Vercel fallback 部署脚本部署仓库根目录失败，未返回 preview URL。
+- 发生位置：/Users/sxlx/.codex/skills/vercel-deploy/scripts/deploy.sh
+- 上下文：为 Sui Overflow 提交补齐公开 live app URL，执行 `deploy.sh /Users/sxlx/Documents/Codex/policy-pay-agent`。
+- 可能原因：仓库是 pnpm/turbo monorepo，fallback 脚本从根目录未能识别 Next.js app 或部署端构建未接受该包结构。
+- 解决状态：未解决
+
+## [2026-06-20 03:59:33 CST]
+- 问题描述：临时 standalone web 部署包本地 `pnpm build` 失败，TypeScript 无法解析 `@noble/hashes/blake2.js`。
+- 发生位置：/tmp/policypay-web-deploy/packages/sdk/src/hash.ts
+- 上下文：为 Vercel fallback 部署创建仅包含 Next.js 前端和 SDK 源码的临时包。
+- 可能原因：脱离原 pnpm workspace/lockfile 后，file 依赖的 SDK 子路径解析与原仓库不一致。
+- 解决状态：未解决
+
+## [2026-06-20 04:02:54 CST]
+- 问题描述：公开前端部署已完成，前述 Vercel fallback 和 standalone 临时包构建问题已绕过。
+- 发生位置：https://policypay-web-deploy.vercel.app
+- 上下文：改用 `pnpm dlx vercel deploy /tmp/policypay-web-deploy --yes`，临时包增加直接依赖 `@noble/hashes` 后远端 Next.js 构建成功。
+- 可能原因：fallback endpoint 已弃用，且临时包需要显式声明 SDK 源码依赖解析所需的直接依赖。
+- 解决状态：已解决

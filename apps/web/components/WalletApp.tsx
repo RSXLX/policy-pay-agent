@@ -47,7 +47,8 @@ import {
 import { dAppKit } from '../app/dapp-kit';
 import { extractDigest, findCreatedObjects } from '../lib/result';
 
-const packageId = process.env.NEXT_PUBLIC_PACKAGE_ID ?? '0xTODO';
+const DEFAULT_TESTNET_PACKAGE_ID = '0x46d49efb36a1bc3b253d5a02efd60de2668c2155e1efc9145eca0c68c9d2fd62';
+const packageId = process.env.NEXT_PUBLIC_PACKAGE_ID ?? DEFAULT_TESTNET_PACKAGE_ID;
 const network = process.env.NEXT_PUBLIC_SUI_NETWORK ?? 'testnet';
 const defaultCoinType = process.env.NEXT_PUBLIC_DEFAULT_COIN_TYPE ?? SUI_COIN_TYPE;
 const agentApiUrl = process.env.NEXT_PUBLIC_AGENT_API_URL ?? 'http://localhost:8787';
