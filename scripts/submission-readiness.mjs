@@ -70,6 +70,8 @@ const requiredFiles = [
   'output/PolicyPay-Agent-Pitch-recording-shotlist.csv',
   'output/PolicyPay-Agent-Pitch-slidecut.mp4',
   'submission/sui-overflow-submission.md',
+  'submission/deepsurge-form-fields.md',
+  'submission/deepsurge-submission-status.md',
 ];
 
 for (const required of requiredFiles) {

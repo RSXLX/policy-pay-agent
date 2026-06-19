@@ -415,3 +415,23 @@
 - 上下文：准备检查是否可以继续赛事表单提交。
 - 可能原因：页面前端加载慢或当前浏览器标签导航状态未完成。
 - 解决状态：未解决
+## [2026-06-20 04:06:44 CST]
+- 问题描述：内置浏览器连接脚本报错 `Identifier 'setupBrowserRuntime' has already been declared`。
+- 发生位置：node_repl browser setup
+- 上下文：继续检查 DeepSurge 登录状态时重复执行了此前已经声明过的 browser setup 常量。
+- 可能原因：Node REPL 顶层绑定会跨调用保留，不能重复声明同名 `const`。
+- 解决状态：未解决
+
+## [2026-06-20 04:07:28 CST]
+- 问题描述：DeepSurge 赛事提交仍无法继续，页面显示 `Sign in to Participate`，没有创建或提交项目入口。
+- 发生位置：https://www.deepsurge.xyz/hackathons/b587dc0c-4cb8-4e63-ada5-519df38103bf
+- 上下文：GitHub、Release、Vercel live app、pitch media 和提交字段均已准备完成后，继续检查赛事实际提交入口。
+- 可能原因：当前浏览器会话未登录 DeepSurge；继续提交需要用户完成账号/OAuth 登录授权。
+- 解决状态：未解决
+
+## [2026-06-20 04:07:28 CST]
+- 问题描述：内置浏览器连接脚本重复声明问题已解决。
+- 发生位置：node_repl browser setup
+- 上下文：改为复用现有 `globalThis.browser` 绑定并成功读取 DeepSurge 标签状态。
+- 可能原因：此前重复声明顶层 `const`。
+- 解决状态：已解决
