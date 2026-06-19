@@ -1,0 +1,32 @@
+{
+  "name": "@policy-pay/sdk",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "@mysten/sui": "^2.0.0"
+  },
+  "dependencies": {
+    "@noble/hashes": "^2.2.0",
+    "zod": "^3.25.56"
+  },
+  "devDependencies": {
+    "@mysten/sui": "^2.16.0",
+    "vitest": "^3.2.1"
+  }
+}

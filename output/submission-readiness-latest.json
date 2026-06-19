@@ -1,0 +1,114 @@
+{
+  "generatedAt": "2026-06-19T19:50:32.227Z",
+  "ready": true,
+  "counts": {
+    "pass": 18,
+    "warn": 0,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "name": "productCopy",
+      "status": "pass",
+      "detail": "Product copy gate passed (26 files scanned)."
+    },
+    {
+      "name": "packageId",
+      "status": "pass",
+      "detail": "Configured package id 0x46d49efb36a1bc3b253d5a02efd60de2668c2155e1efc9145eca0c68c9d2fd62",
+      "packageId": "0x46d49efb36a1bc3b253d5a02efd60de2668c2155e1efc9145eca0c68c9d2fd62"
+    },
+    {
+      "name": "publishedMetadata",
+      "status": "pass",
+      "detail": "Move Published.toml includes testnet package metadata"
+    },
+    {
+      "name": "artifact:docs/pitch-video-script.md",
+      "status": "pass",
+      "detail": "Required submission artifact exists",
+      "file": "docs/pitch-video-script.md"
+    },
+    {
+      "name": "artifact:output/PolicyPay-Agent-Pitch.pptx",
+      "status": "pass",
+      "detail": "Required submission artifact exists",
+      "file": "output/PolicyPay-Agent-Pitch.pptx"
+    },
+    {
+      "name": "artifact:output/PolicyPay-Agent-Pitch.pptx.inspect.ndjson",
+      "status": "pass",
+      "detail": "Required submission artifact exists",
+      "file": "output/PolicyPay-Agent-Pitch.pptx.inspect.ndjson"
+    },
+    {
+      "name": "artifact:output/PolicyPay-Agent-Pitch-voiceover.txt",
+      "status": "pass",
+      "detail": "Required submission artifact exists",
+      "file": "output/PolicyPay-Agent-Pitch-voiceover.txt"
+    },
+    {
+      "name": "artifact:output/PolicyPay-Agent-Pitch-voiceover.mp3",
+      "status": "pass",
+      "detail": "Required submission artifact exists",
+      "file": "output/PolicyPay-Agent-Pitch-voiceover.mp3"
+    },
+    {
+      "name": "artifact:output/PolicyPay-Agent-Pitch.en.srt",
+      "status": "pass",
+      "detail": "Required submission artifact exists",
+      "file": "output/PolicyPay-Agent-Pitch.en.srt"
+    },
+    {
+      "name": "artifact:output/PolicyPay-Agent-Pitch-recording-shotlist.csv",
+      "status": "pass",
+      "detail": "Required submission artifact exists",
+      "file": "output/PolicyPay-Agent-Pitch-recording-shotlist.csv"
+    },
+    {
+      "name": "artifact:output/PolicyPay-Agent-Pitch-slidecut.mp4",
+      "status": "pass",
+      "detail": "Required submission artifact exists",
+      "file": "output/PolicyPay-Agent-Pitch-slidecut.mp4"
+    },
+    {
+      "name": "artifact:submission/sui-overflow-submission.md",
+      "status": "pass",
+      "detail": "Required submission artifact exists",
+      "file": "submission/sui-overflow-submission.md"
+    },
+    {
+      "name": "removed:apps/web/app/tests/page.tsx",
+      "status": "pass",
+      "detail": "Public test surface is absent",
+      "file": "apps/web/app/tests/page.tsx"
+    },
+    {
+      "name": "removed:apps/web/app/api/test-runs/route.ts",
+      "status": "pass",
+      "detail": "Public test surface is absent",
+      "file": "apps/web/app/api/test-runs/route.ts"
+    },
+    {
+      "name": "removed:apps/web/components/TestConsole.tsx",
+      "status": "pass",
+      "detail": "Public test surface is absent",
+      "file": "apps/web/components/TestConsole.tsx"
+    },
+    {
+      "name": "gitRepository",
+      "status": "pass",
+      "detail": "Local git repository exists"
+    },
+    {
+      "name": "gitRemote",
+      "status": "pass",
+      "detail": "https://github.com/RSXLX/policy-pay-agent.git"
+    },
+    {
+      "name": "gitClean",
+      "status": "pass",
+      "detail": "Working tree is clean"
+    }
+  ]
+}

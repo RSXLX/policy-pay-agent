@@ -1,0 +1,11 @@
+[package]
+name = "agent_treasury"
+edition = "2024.beta"
+license = "Apache-2.0"
+authors = ["PolicyPay Team"]
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/testnet" }
+
+[addresses]
+agent_treasury = "0x0"

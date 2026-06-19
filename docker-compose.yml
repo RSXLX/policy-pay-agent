@@ -1,0 +1,24 @@
+services:
+  agent:
+    image: node:20-alpine
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    command: sh -c "corepack enable && pnpm install && pnpm --filter @policy-pay/agent dev"
+    env_file:
+      - .env
+    ports:
+      - "8787:8787"
+
+  web:
+    image: node:20-alpine
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    command: sh -c "corepack enable && pnpm install && pnpm --filter @policy-pay/web dev"
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - agent

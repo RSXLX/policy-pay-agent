@@ -1,0 +1,39 @@
+1
+00:00:00,000 --> 00:00:15,000
+Hi, this is PolicyPay Agent: a policy-bound autonomous payment agent built on Sui.
+
+2
+00:00:15,000 --> 00:00:35,000
+It targets the Agentic Web track because the agent can observe state, plan an action, transact on Sui, and coordinate recurring payments inside boundaries enforced by Move.
+
+3
+00:00:35,000 --> 00:00:55,000
+Recurring crypto payments are still awkward for teams, DAOs, and small protocol treasuries. PolicyPay separates automation from authority.
+
+4
+00:00:55,000 --> 00:01:15,000
+The owner connects a Sui wallet, creates an AgentVault, and defines hard limits before signing.
+
+5
+00:01:15,000 --> 00:01:35,000
+Those limits include max payment amount, rolling-window spend, reserve balance, expiry, and the agent wallet receiving the scoped session capability.
+
+6
+00:01:35,000 --> 00:01:55,000
+Sui produces three important objects: the shared AgentVault, the owner's OwnerCap, and the agent's AgentSessionCap.
+
+7
+00:01:55,000 --> 00:02:15,000
+The owner deposits SUI and adds a recurring payment rule with recipient, amount, schedule, nonce, and active state stored onchain.
+
+8
+00:02:15,000 --> 00:02:35,000
+The agent service observes due rules, previews a plan, risk-checks it, and submits the payment transaction with the agent key.
+
+9
+00:02:35,000 --> 00:02:50,000
+If the agent tries to exceed policy, pay too early, drain the reserve, or continue after pause or revoke, Move aborts the call.
+
+10
+00:02:50,000 --> 00:03:00,000
+Every meaningful step leaves Sui evidence: package id, vault objects, transaction digest, object state, and events.

@@ -1,0 +1,35 @@
+Hi, this is PolicyPay Agent: a policy-bound autonomous payment agent built on Sui.
+
+It targets the Agentic Web track because the agent can observe state, plan an action, transact on Sui, and coordinate recurring payments. But it can only do that inside boundaries enforced by Move.
+
+Recurring crypto payments are still awkward for teams, DAOs, and small protocol treasuries.
+
+Manual multisig workflows are safe, but slow. Generic automation is fast, but it can become too powerful. PolicyPay separates automation from authority.
+
+The owner connects a Sui wallet and creates an AgentVault.
+
+Before signing, the owner defines the agent's hard limits: maximum spend per payment, rolling-window spend limit, minimum reserve balance, expiration time, and the agent wallet that will receive the scoped session capability.
+
+This is not just UI state. These boundaries are encoded into the Move object model.
+
+When the vault is created, Sui produces three important objects.
+
+The shared AgentVault holds funds and policy. The owner keeps the OwnerCap for administration. The agent receives only an AgentSessionCap, which can execute approved payment rules but cannot withdraw arbitrary funds or add new recipients.
+
+Next, the owner deposits SUI into the vault and adds a recurring payment rule.
+
+The rule stores the recipient, amount, schedule, nonce, and active state onchain. That means prompt injection or backend bugs cannot silently change who gets paid or how much gets paid.
+
+The agent service observes the vault, finds due rules, previews the plan, risk-checks it, and submits the payment transaction with the agent key.
+
+The backend helps automate execution, but it is not the source of authority. The Move contract is.
+
+The most important part is the failure path.
+
+If the agent tries to pay too early, exceed the per-payment limit, cross the rolling-window limit, drain below the reserve, or continue after pause or revoke, the Move call aborts and funds do not move.
+
+Every meaningful step leaves Sui evidence: package id, vault objects, transaction digest, object state, and events.
+
+In the recording, I open Sui Explorer and verify the package and transaction directly on Testnet.
+
+PolicyPay turns Sui object ownership and capabilities into payment rails for autonomous agents: the agent can act, but only inside verifiable user-defined boundaries.
