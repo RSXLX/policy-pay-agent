@@ -35,9 +35,10 @@ The product demonstrates an autonomous agent that observes state, plans an actio
 - Subtitle file: `output/PolicyPay-Agent-Pitch.en.srt`
 - Recording shotlist: `output/PolicyPay-Agent-Pitch-recording-shotlist.csv`
 - Slide-cut video draft: `output/PolicyPay-Agent-Pitch-slidecut.mp4`
+- Public asset release: https://github.com/RSXLX/policy-pay-agent/releases/tag/submission-v1
 - Readiness report: `output/submission-readiness-latest.json`
 - GitHub repository: https://github.com/RSXLX/policy-pay-agent
-- Pitch video URL: to be filled after recording/export
+- Pitch video URL: https://github.com/RSXLX/policy-pay-agent/releases/tag/submission-v1
 - Live app URL: to be filled after deployment, or use local walkthrough during recording
 
 ## Suggested Submission Description
@@ -60,7 +61,7 @@ PolicyPay Agent is a Sui-native autonomous payment product for recurring treasur
 ## Final Submission Checklist
 
 - [x] GitHub repository URL added above.
-- [ ] Pitch video URL added above.
+- [x] Pitch video URL added above.
 - [ ] Live app URL added above if deployed.
 - [ ] `pnpm test` passes.
 - [ ] `pnpm typecheck` passes.

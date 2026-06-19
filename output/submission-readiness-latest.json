@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-19T19:52:00.202Z",
+  "generatedAt": "2026-06-19T19:54:50.310Z",
   "ready": true,
   "counts": {
     "pass": 18,
@@ -10,7 +10,7 @@
     {
       "name": "productCopy",
       "status": "pass",
-      "detail": "Product copy gate passed (27 files scanned)."
+      "detail": "Product copy gate passed (28 files scanned)."
     },
     {
       "name": "packageId",
