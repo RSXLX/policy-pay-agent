@@ -408,3 +408,10 @@
 - 上下文：改用 `pnpm dlx vercel deploy /tmp/policypay-web-deploy --yes`，临时包增加直接依赖 `@noble/hashes` 后远端 Next.js 构建成功。
 - 可能原因：fallback endpoint 已弃用，且临时包需要显式声明 SDK 源码依赖解析所需的直接依赖。
 - 解决状态：已解决
+
+## [2026-06-20 04:04:25 CST]
+- 问题描述：内置浏览器导航到 DeepSurge hackathon 页面超时。
+- 发生位置：https://www.deepsurge.xyz/hackathons/b587dc0c-4cb8-4e63-ada5-519df38103bf
+- 上下文：准备检查是否可以继续赛事表单提交。
+- 可能原因：页面前端加载慢或当前浏览器标签导航状态未完成。
+- 解决状态：未解决
