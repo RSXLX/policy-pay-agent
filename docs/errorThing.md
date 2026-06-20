@@ -435,3 +435,65 @@
 - 上下文：改为复用现有 `globalThis.browser` 绑定并成功读取 DeepSurge 标签状态。
 - 可能原因：此前重复声明顶层 `const`。
 - 解决状态：已解决
+## [2026-06-20 12:24:05 CST]
+- 问题描述：读取 Chrome control skill 的旧缓存路径失败。
+- 发生位置：/Users/sxlx/.codex/plugins/cache/openai-bundled/chrome/26.611.62324/skills/control-chrome/SKILL.md
+- 上下文：准备控制当前 Chrome 中的 DeepSurge 创建项目表单。
+- 可能原因：Chrome 插件缓存版本已更新到 `26.616.32156`。
+- 解决状态：已解决
+
+## [2026-06-20 12:54:07 CST]
+- 问题描述：本地素材检查时 `ffprobe` 命令把两个文件作为同一次输入，返回参数错误。
+- 发生位置：output/PolicyPay-Agent-Pitch-voiceover.mp3 与 output/PolicyPay-Agent-Pitch-slidecut.mp4
+- 上下文：重新生成 Fish Audio 语音视频前检查现有音频和视频时长。
+- 可能原因：`ffprobe` 只接受一个输入文件，本次检查命令写法不正确。
+- 解决状态：已解决
+
+## [2026-06-20 13:04:17 CST]
+- 问题描述：Fish Audio 语音生成成功后，字幕脚本因原稿词数与时间戳词数匹配阈值过严而中断。
+- 发生位置：scripts/build-pitch-media.mjs
+- 上下文：使用 Fish Audio `stream/with-timestamp` 接口生成 pitch video 旁白和字幕，校验显示匹配 318/365 个脚本文词。
+- 可能原因：TTS 时间戳会拆分、合并或省略部分标点/复合词，不能用过高的逐词匹配比例作为失败条件。
+- 解决状态：未解决
+
+## [2026-06-20 13:06:20 CST]
+- 问题描述：Fish Audio 音频和 SRT 已生成，但 ffmpeg 烧录字幕时 `force_style` 参数解析失败。
+- 发生位置：scripts/build-pitch-media.mjs
+- 上下文：合成带字幕 MP4 时，`subtitles` filter 的样式字符串包含逗号，被 ffmpeg filter graph 误解析为新的 filter 参数。
+- 可能原因：ffmpeg `subtitles` filter 的 `force_style` 逗号需要额外转义，直接拼接样式字符串不稳。
+- 解决状态：未解决
+
+## [2026-06-20 13:08:17 CST]
+- 问题描述：改用 ASS 字幕文件后，ffmpeg 仍无法烧录字幕，当前本机 ffmpeg 缺少 `ass/subtitles/drawtext` 文本相关滤镜。
+- 发生位置：scripts/build-pitch-media.mjs
+- 上下文：合成 pitch video 时检查 `ffmpeg -filters`，未发现可用字幕或文字绘制滤镜。
+- 可能原因：本机 ffmpeg 编译参数未启用 libass/freetype 相关能力。
+- 解决状态：未解决
+
+## [2026-06-20 13:13:03 CST]
+- 问题描述：Fish Audio 时间戳匹配阈值、ffmpeg 字幕样式解析、以及本机缺少字幕/文字滤镜的问题已通过预渲染字幕帧方案解决。
+- 发生位置：scripts/build-pitch-media.mjs
+- 上下文：脚本先用 Fish Audio 生成 MP3 与 word timing，再用 bundled Python/Pillow 把字幕渲染进静态帧，最后由 ffmpeg 仅拼接帧和音频。
+- 可能原因：本机 ffmpeg 缺少字幕文本滤镜，直接烧录 SRT/ASS 不可靠。
+- 解决状态：已解决
+
+## [2026-06-20 13:14:18 CST]
+- 问题描述：最终校验发现 SRT 字幕在 `package id,` 处截断，未覆盖完整 Fish Audio 旁白。
+- 发生位置：output/PolicyPay-Agent-Pitch.en.srt
+- 上下文：Fish 原始 alignment 包含完整结尾，但原稿逐词匹配在后半段发生偏移，导致生成字幕只使用了部分原稿映射。
+- 可能原因：Fish word timing 会省略或合并部分词，逐词映射偏移后消耗了剩余时间戳。
+- 解决状态：未解决
+
+## [2026-06-20 13:19:17 CST]
+- 问题描述：SRT 字幕截断问题已解决，字幕覆盖到完整结尾 `user-defined boundaries.`。
+- 发生位置：scripts/build-pitch-media.mjs 与 output/PolicyPay-Agent-Pitch.en.srt
+- 上下文：新增原稿按 Fish 时间轴重排逻辑，并用 `PITCH_TTS=reuse` 复用 Fish 音频和 alignment 重新生成 SRT 与 MP4。
+- 可能原因：此前直接使用 Fish 原始词或不完整逐词匹配，无法同时保证完整文本和原稿标点。
+- 解决状态：已解决
+
+## [2026-06-20 13:19:59 CST]
+- 问题描述：`pnpm verify:submission` 返回非零退出码，但检查结果为 21 pass、1 warn、0 fail。
+- 发生位置：scripts/submission-readiness.mjs
+- 上下文：最终视频生成后执行提交 readiness 校验，唯一 warning 是 Git 工作区有未提交变更。
+- 可能原因：视频、字幕、脚本和错误日志尚未提交。
+- 解决状态：未解决
