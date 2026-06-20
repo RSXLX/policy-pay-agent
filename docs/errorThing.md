@@ -497,3 +497,10 @@
 - 上下文：最终视频生成后执行提交 readiness 校验，唯一 warning 是 Git 工作区有未提交变更。
 - 可能原因：视频、字幕、脚本和错误日志尚未提交。
 - 解决状态：未解决
+
+## [2026-06-20 13:21:14 CST]
+- 问题描述：`pnpm verify:submission` 非零退出码问题已解决，当前 readiness 为 22 pass、0 warn、0 fail。
+- 发生位置：output/submission-readiness-latest.json
+- 上下文：提交 Fish Audio 视频改动后复跑提交校验。
+- 可能原因：前一次失败仅由未提交工作区导致。
+- 解决状态：已解决
