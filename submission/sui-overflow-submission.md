@@ -34,12 +34,13 @@ The product demonstrates an autonomous agent that observes state, plans an actio
 - Voiceover audio: `output/PolicyPay-Agent-Pitch-voiceover.mp3`
 - Subtitle file: `output/PolicyPay-Agent-Pitch.en.srt`
 - Recording shotlist: `output/PolicyPay-Agent-Pitch-recording-shotlist.csv`
-- Slide-cut video draft: `output/PolicyPay-Agent-Pitch-slidecut.mp4`
+- Slide-cut video: `output/PolicyPay-Agent-Pitch-slidecut.mp4`
 - Public asset release: https://github.com/RSXLX/policy-pay-agent/releases/tag/submission-v1
 - Readiness report: `output/submission-readiness-latest.json`
 - GitHub repository: https://github.com/RSXLX/policy-pay-agent
-- Pitch video URL: https://github.com/RSXLX/policy-pay-agent/releases/tag/submission-v1
+- Pitch video URL: https://github.com/RSXLX/policy-pay-agent/releases/download/submission-v1/PolicyPay-Agent-Pitch-slidecut.mp4
 - Live app URL: https://policypay-web-deploy.vercel.app
+- DeepSurge project URL: https://deepsurge.xyz/projects/140fdd89-2d87-4ea4-96e3-af1cd4ee45ec
 
 ## Suggested Submission Description
 

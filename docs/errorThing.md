@@ -504,3 +504,10 @@
 - 上下文：提交 Fish Audio 视频改动后复跑提交校验。
 - 可能原因：前一次失败仅由未提交工作区导致。
 - 解决状态：已解决
+
+## [2026-06-20 13:25:34 CST]
+- 问题描述：更新 DeepSurge 已提交状态后，`pnpm verify:submission` 因工作区未提交变更返回非零退出码。
+- 发生位置：scripts/submission-readiness.mjs
+- 上下文：已确认 DeepSurge 项目页存在并更新本地提交资料后立即执行 readiness 校验。
+- 可能原因：submission 文档变更尚未提交，触发 git-clean warning。
+- 解决状态：未解决
