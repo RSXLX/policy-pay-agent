@@ -511,3 +511,10 @@
 - 上下文：已确认 DeepSurge 项目页存在并更新本地提交资料后立即执行 readiness 校验。
 - 可能原因：submission 文档变更尚未提交，触发 git-clean warning。
 - 解决状态：未解决
+
+## [2026-06-20 13:26:12 CST]
+- 问题描述：DeepSurge 提交状态更新后的 readiness warning 已解决，当前为 22 pass、0 warn、0 fail。
+- 发生位置：output/submission-readiness-latest.json
+- 上下文：提交 DeepSurge 项目 URL 与状态文档后复跑 `pnpm verify:submission`。
+- 可能原因：前一次非零退出码仅由未提交工作区触发。
+- 解决状态：已解决
